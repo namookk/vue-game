@@ -5,7 +5,7 @@
   "author": "",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --host 0.0.0.0 --disableHostCheck true --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
@@ -16,6 +16,8 @@
     "sockjs-client": "^1.5.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "vuex": "^3.6.0",
+    "vuex-persistedstate": "^4.0.0-beta.1",
     "webstomp-client": "^1.2.6"
   },
   "devDependencies": {

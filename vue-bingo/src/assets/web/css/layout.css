@@ -1,0 +1,20 @@
+.wrap {width: 100%;height: 100vh;display: flex;align-items: center;justify-content: center;}
+.wrap#main {width: 75%;float: left;flex-direction: column;}
+.theme {width: 50vw;overflow: hidden;}
+.theme li {float: left;width: 16%;margin: 1% 2%;text-align: center;border: 1px solid #000;line-height: 1.4;min-height: 50px;vertical-align: middle;}
+.chatWrap {width: 25%;float: right;height: 80vh;margin-top: 10vh;}
+.chat {width: 100%;height: calc(100% - 30px);background: #fff;}
+.chat p {line-height: 1.4;}
+.inputWrap input {width: 75%;line-height: 30px;display: block;float: left;}
+.inputWrap button {width: 25%;line-height: 30px;display: block;}
+.bingo {width: 30vw;height: 30vw;margin-top: 4vh;border-bottom: 1px solid #000;border-right: 1px solid #000;background: #fff;}
+.bingo td {height: 20%;border-top: 1px solid #000;border-left: 1px solid #000;}
+.bingo td textarea {padding: 10px 15px;line-height: 1.4;background: transparent;border: 0;resize: none;text-align: center;}
+.bingo td textarea:focus {outline: none;}
+.bingo td textarea {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.bingo td textarea::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
