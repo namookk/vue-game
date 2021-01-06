@@ -17,8 +17,15 @@ export default {
     },
     methods : {
         goMain () {
-            this.$store.commit('login',this.username)
-            location.href= "/main"
+            this.$http.get('http://192.168.11.209:9999/api/game/enter')
+            .then(res => {
+               if(res.data.obj < 2){
+                  this.$store.commit('login',this.username)
+                  location.href= "/main"
+               }else{
+                  alert("인원이 가득찼습니다.");
+               }
+            })
         }
     }
 }
