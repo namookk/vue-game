@@ -1,5 +1,6 @@
 <template>
   <div id="login" class="wrap">
+     <h1>BINGO</h1>
     <div class="userWrap">
       <input type="text" v-model="username">
       <button type="button" @click="goMain">시작</button>
@@ -17,7 +18,7 @@ export default {
     },
     methods : {
         goMain () {
-            this.$http.get('http://192.168.11.209:9999/api/game/enter')
+            this.$http.get('http://54.180.210.229:9999/api/game/enter')
             .then(res => {
                if(res.data.obj < 2){
                   this.$store.commit('login',this.username)
