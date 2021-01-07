@@ -4,88 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="common.css">
-  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/layout.css">
 </head>
 <body>
   <div id="main" class="wrap">
-    <div class="stepWrap">
-      <div class="step1" style="display: none;">
-        <button type="button">준비</button>
+    <div class="container">
+      <div class="stepWrap">
+        <div class="step step1 on">
+          <button type="button" class="readyBtn">준비</button>
+          <p class="statusBar">상대편이 준비 중입니다.</p>
+        </div>
+        <div class="step step2">
+          <ul class="theme">
+            <li>주제</li>
+            <li>주제</li>
+            <li>주제</li>
+            <li>주제</li>
+            <li>주제</li>
+            <li>주제</li>
+            <li>주제</li>
+            <li>주제</li>
+            <li>주제</li>
+            <li>주제</li>
+          </ul>
+        </div>
+        <div class="step step3">
+          <h2>주제</h2>
+          <table class="bingo">
+            <colgroup>
+              <col width="20%" />
+              <col width="20%" />
+              <col width="20%" />
+              <col width="20%" />
+              <col width="20%" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+              </tr>
+              <tr>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+              </tr>
+              <tr>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+              </tr>
+              <tr>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+              </tr>
+              <tr>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="step2">
-        <ul class="theme">
-          <li>주제</li>
-          <li>주제</li>
-          <li>주제</li>
-          <li>주제</li>
-          <li>주제</li>
-          <li>주제</li>
-          <li>주제</li>
-          <li>주제</li>
-          <li>주제</li>
-          <li>주제</li>
-        </ul>
+      <div class="chatWrap">
+        <div class="chat">
+          <div class="comment">
+            <span class="name">도은</span>
+            <p>펭하</p>
+          </div>
+          <div class="comment mine">
+            <span class="name">나</span>
+            <p>펭하</p>
+          </div>
+        </div>
+        <div class="inputWrap">
+          <input type="text">
+          <button type="button">전송</button>
+        </div>
       </div>
-      <div class="step3" style="display: none;">
-        <h2>주제</h2>
-        <table class="bingo">
-          <colgroup>
-            <col width="20%" />
-            <col width="20%" />
-            <col width="20%" />
-            <col width="20%" />
-            <col width="20%" />
-          </colgroup>
-          <tbody>
-            <tr>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-            </tr>
-            <tr>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-            </tr>
-            <tr>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-            </tr>
-            <tr>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-            </tr>
-            <tr>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-              <td><textarea></textarea></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="chatWrap">
-      <div class="chat">
-        <p><span class="name">도은</span><span class="contents">펭하</span></p>
-        <p><span class="name">나</span>안녕하세요</p>
-      </div>
-      <div class="inputWrap">
-        <input type="text">
-        <button type="button">보내기</button>
-      </div>
+      <button type="button" class="exitBtn">나가기</button>
     </div>
   </div>
 </body>

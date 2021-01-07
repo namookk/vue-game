@@ -1,5 +1,5 @@
 /*css reset*/
-* {margin: 0;padding: 0;box-sizing: border-box;}
+* {margin: 0;padding: 0;box-sizing: border-box;line-height: 1;}
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0}html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6{-webkit-text-size-adjust:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;clear:both;}
 html { font-family: 'Microsoft YaHei',"Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 62.5%; }
 body {font-size: 1.4rem;overflow-x: hidden;min-width:320px; /*-webkit-overflow-scrolling: touch;*/color:#1a1a1a;background:#f5f5f5; }
@@ -17,7 +17,7 @@ ul, ol { list-style: none outside none; }h1, h2, h3,strong {font-weight: 600; }
 img{vertical-align:middle;border:0;-ms-interpolation-mode:bicubic;}
 
 button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0; }
-button {background: transparent;border: none;}
+button {display: block;background: transparent;border: none;}
 button:active, button:focus {outline: none;}
 button, select { text-transform: none; }
 button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
@@ -40,7 +40,3 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .ellipsis { white-space:nowrap; text-overflow:ellipsis; overflow:hidden}
 .break { word-break:break-all; word-wrap:break-word}
 .clearfix:after{content:'\0020';display:block;height:0;clear:both}.clearfix{*zoom:1}
-
-
-/*noScript*/
-.noScript{margin:10px;text-align:center;background:#adb9c4;color:#fff;display:block; height:40px;line-height:40px}
