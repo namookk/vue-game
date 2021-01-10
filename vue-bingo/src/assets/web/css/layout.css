@@ -30,9 +30,12 @@
 .theme {width: 50vw;display: flex;align-items: center;justify-content: center;flex-flow: row wrap;overflow: hidden;}
 .theme li {width: 16%;margin: 2%;padding: 30px 0;text-align: center;border: 1px solid #222;line-height: 1.4;}
 /* step3 */
-.bingo {width: 30vw;height: 30vw;margin-top: 4vh;border-bottom: 1px solid #222;border-right: 1px solid #222;background: #fff;}
-.bingo td {height: 20%;border-top: 1px solid #222;border-left: 1px solid #222;}
-.bingo td textarea {padding: 10px 15px;line-height: 1.4;background: transparent;border: 0;resize: none;text-align: center;}
+.step3 h2 {font-size: 30px;margin-top: -15px;}
+.bingo {width: 35vw;height: 35vw;margin-top: 40px;border-bottom: 1px solid #222;border-right: 1px solid #222;background: #fff;}
+.bingo td {position: relative;height: 20%;padding: 15px;border-top: 1px solid #222;border-left: 1px solid #222;}
+.bingo td.chk:after {content: '';display: block;position: absolute;top: 7.5%;left: 7.5%;width: 85%;height: 85%;border-radius: 50%;border: 5px solid red;box-sizing: border-box;}
+.bingo td.sucess {background: pink;}
+.bingo td textarea {width: 100%;line-height: 1.4;background: transparent;border: 0;resize: none;text-align: center;word-break: keep-all;}
 .bingo td textarea:focus {outline: none;}
 .bingo td textarea {
   -ms-overflow-style: none; /* IE and Edge */
@@ -43,16 +46,24 @@
 }
 /* 채팅창 */
 .chatWrap {width: 20%;height: 80vh;float: right;}
-.chat {width: 100%;height: calc(100% - 34px);padding: 13px;background: #fff;}
-.comment {margin-top: 5px;}
+.chat {width: 100%;height: calc(100% - 34px);padding: 13px;background: #fff;overflow-y: scroll;}
+.chat {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.chat::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+.comment {float: left;width: 100%;margin-top: 5px;overflow: hidden;}
 .comment:first-child {margin-top: 0;}
 .comment.mine {float: right;}
 .comment .name {display: block;}
 .comment.mine .name {text-align: right;}
+.comment.mine p {float: right;}
 .comment p {display: inline-block;position: relative;margin-top: 8px;padding: 4px 7px;border-radius: 3px;line-height: 1.5;background: #333;color: #fff;font-weight: 300;box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);}
 .comment p:before {content: '';display: block;position: absolute;top: -4px;left: 5px;width: 0;height: 0;border-left: 3px solid transparent;border-right: 4px solid transparent;border-bottom: 4px solid #333;}
 .comment.mine p:before {left: auto;right: 5px;border-left-width: 4px;border-right-width: 3px;}
-.inputWrap input {width: calc(100% - 65px);height: 34px;padding: 0 10px;line-height: 34px;display: block;float: left;}
-.inputWrap button {width: 65px;height: 34px;padding: 0 5px;line-height: 34px;background: #494949;color: #fff;}
+.inputWrap input {width: calc(100% - 60px);height: 34px;padding: 0 10px;line-height: 34px;display: block;float: left;}
+.inputWrap button {width: 60px;height: 34px;padding: 0 5px;line-height: 34px;background: #494949;color: #fff;}
 
 .exitBtn {position: absolute;top: 15px;right: 0;padding: 10px 15px;background: #494949;color: #fff;border-radius: 3px;}
