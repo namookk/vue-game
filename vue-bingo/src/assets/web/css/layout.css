@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&family=Noto+Sans:wght@400;700&display=swap');
 
 /* 공통 */
-.wrap {position: relative;width: 100%;height: 100vh;display: flex;align-items: center;justify-content: center;font-size: 14px;font-family: 'Noto Sans KR', 'Noto Sans', sans-serif;}
+.wrap {position: relative;width: 100%;height: 100vh;display: flex;align-items: center;justify-content: center;font-size: 14px;font-family: 'Noto Sans KR', 'Noto Sans', sans-serif;background: #16496e;}
 .container {position: relative;max-width: 1980px;width: 95%;min-width: 1200px;height: 100%;display: flex;align-items: center;justify-content: center;}
 
 
@@ -24,25 +24,26 @@
 .readyBtn:hover {background: #000;}
 .readyBtn.off {color: #ddd;border-color: #777;background: -webkit-gradient(linear, left top, left bottom, from(#888), to(#575757));}
 .readyBtn.disable {color: #ddd;border-color: #777;background: -webkit-gradient(linear, left top, left bottom, from(#888), to(#575757));}
-.statusBar {margin-top: 50px;font-size: 18px;}
+.statusBar {margin-top: 50px;font-size: 18px;font-weight: 500;color: #f5f0e9;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;}
 .statusBar.off {visibility: hidden;}
 /* step2 */
 .theme {width: 50vw;display: flex;align-items: center;justify-content: center;flex-flow: row wrap;overflow: hidden;}
 .theme li {width: 16%;margin: 2%;padding: 30px 0;text-align: center;border: 1px solid #222;line-height: 1.4;}
 /* step3 */
-.step3 h2 {font-size: 30px;margin-top: -15px;}
-.bingo {width: 35vw;height: 35vw;margin-top: 40px;border-bottom: 1px solid #222;border-right: 1px solid #222;background: #fff;}
-.bingo td {position: relative;height: 20%;padding: 15px;border-top: 1px solid #222;border-left: 1px solid #222;}
-.bingo td.chk:after {content: '';display: block;position: absolute;top: 7.5%;left: 7.5%;width: 85%;height: 85%;border-radius: 50%;border: 5px solid red;box-sizing: border-box;}
-.bingo td.sucess {background: pink;}
-.bingo td textarea {width: 100%;line-height: 1.4;background: transparent;border: 0;resize: none;text-align: center;word-break: keep-all;}
+.step3 h2 {margin-top: -15px;padding: 10px 100px 14px;font-size: 30px;color: #fff;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;text-align: center;background: #a71e22;}
+.bingo {width: 40vw;height: 35vw;margin-top: 40px;/*border-bottom: 1px solid #222;border-right: 1px solid #222;*/background: #16496e;border-collapse: separate;border-spacing: 15px;;}
+.bingo td {position: relative;height: calc(20% - 15px);padding: 15px;border-top: 1px solid #222;border-left: 1px solid #222;background: #f8992d;}
+.bingo td:before {content: '';position: absolute;top: 4px;left: 4px;width: 100%;height: 100%;border: 1px solid #222;background: #faf4ed;z-index: 1;}
+.bingo td.chk:after {content: '';display: block;position: absolute;top: calc(50% + 5px);left: calc(50% + 5px);width: 70%;padding-top: 70%;transform: translate(-50%, -50%);border-radius: 50%;border: 5px solid #a71e22;z-index: 3;}
+/* .bingo td.sucess:before {background: #5a96d0;} */
+.bingo td textarea {position: absolute;top: calc(50% + 5px);left: calc(50% + 5px);width: 100%;font-size: 16px;font-weight: 700;text-align: center;line-height: 1.4;background: transparent;border: 0;resize: none;word-break: keep-all;transform: translate(-50%, -50%);z-index: 2;}
 .bingo td textarea:focus {outline: none;}
 .bingo td textarea {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 .bingo td textarea::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera*/
+  display: none; /* Chrome, Safari, Opera */
 }
 /* 채팅창 */
 .chatWrap {width: 20%;height: 80vh;float: right;}
@@ -52,7 +53,7 @@
   scrollbar-width: none; /* Firefox */
 }
 .chat::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera*/
+  display: none; /* Chrome, Safari, Opera */
 }
 .comment {float: left;width: 100%;margin-top: 5px;overflow: hidden;}
 .comment:first-child {margin-top: 0;}
