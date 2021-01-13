@@ -11,9 +11,9 @@
   <div id="main" class="wrap">
     <div class="container">
       <div class="stepWrap">
-        <div class="step step1">
-          <button type="button" class="readyBtn">준비</button>
-          <p class="statusBar">상대편이 준비 중입니다.</p>
+        <div class="step step1 on">
+          <button type="button" class="readyBtn off">준비</button>
+          <p class="statusBar">상대편이 준비 중입니다<span>.</span><span>.</span><span>.</span></p>
         </div>
         <div class="step step2">
           <ul class="subject">
@@ -29,7 +29,7 @@
             <li><span>아이스크림 이름</span></li>
           </ul>
         </div>
-        <div class="step step3 on">
+        <div class="step step3">
           <h2>주제</h2>
           <table class="bingo">
             <colgroup>
@@ -41,44 +41,50 @@
             </colgroup>
             <tbody>
               <tr>
-                <td class="chk sucess"><textarea></textarea></td>
-                <td class="sucess"><textarea></textarea></td>
-                <td class="sucess"><textarea></textarea></td>
-                <td class="sucess"><textarea></textarea></td>
-                <td class="sucess"><textarea></textarea></td>
+                <td class="chk sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td class="sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td class="sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td class="sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td class="sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
               </tr>
               <tr>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
               </tr>
               <tr>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
               </tr>
               <tr>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
               </tr>
               <tr>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
-                <td><textarea></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+      <script>
+      function resize(obj) {
+        obj.style.height = "1px";
+        obj.style.height = (obj.scrollHeight)+"px";
+      }
+      </script>
       <div class="chatWrap">
         <div class="chat">
           <div class="comment">
