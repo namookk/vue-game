@@ -11,9 +11,9 @@
   <div id="main" class="wrap">
     <div class="container">
       <div class="stepWrap">
-        <div class="step step1 on">
-          <button type="button" class="readyBtn off">준비</button>
-          <p class="statusBar">상대편이 준비 중입니다<span>.</span><span>.</span><span>.</span></p>
+        <div class="step step1">
+          <button type="button" class="readyBtn">준비</button>
+          <p class="statusBar"><span class="text">상대편이 준비 중입니다</span><span class="waiting">...</span></p>
         </div>
         <div class="step step2">
           <ul class="subject">
@@ -29,7 +29,7 @@
             <li><span>아이스크림 이름</span></li>
           </ul>
         </div>
-        <div class="step step3">
+        <div class="step step3 on">
           <h2>주제</h2>
           <table class="bingo">
             <colgroup>
@@ -78,12 +78,31 @@
             </tbody>
           </table>
         </div>
+        <div class="exitPopWrap">
+          <div class="exitPop">
+            <p>정말 나가시겠습니까?</p>
+            <button type="button" title="나가기">확인</button>
+            <button type="button" title="나가기 취소">취소</button>
+          </div>
+        </div>
       </div>
       <script>
-      function resize(obj) {
-        obj.style.height = "1px";
-        obj.style.height = (obj.scrollHeight)+"px";
-      }
+        let subject_li = document.querySelectorAll(".step2 .subject li");
+        function resize(obj){
+          obj.style.height = "1px";
+          obj.style.height = (obj.scrollHeight)+"px";
+        }
+        function step2_pop_time(i){
+          setTimeout(function(){
+            subject_li[i].classList.add("on");
+          }, 300 * (i+1))
+        }
+        function step2_pop(){
+          for(let i = 0;i < subject_li.length;i++){
+            step2_pop_time(i);
+          }
+        }
+        step2_pop();
       </script>
       <div class="chatWrap">
         <div class="chat">
