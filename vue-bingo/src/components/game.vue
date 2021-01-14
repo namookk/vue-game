@@ -4,8 +4,8 @@
       <button type="button" class="readyBtn" 
         @click="doReady" 
         :class="{off : ready, disable : numofpeople < 2}">준비</button>
-      <p class="statusBar" :class="{off : (numofpeople < 2 || !ready || oppoReady)}"><span class="text">상대편이 준비 중입니다.</span><span class="waiting">...</span></p>
-      <p class="statusBar" :class="{off : !gameStart}"><span v-text="gameTimer"></span>초후 게임이 시작됩니다.</p>
+      <p class="statusBar" :class="{off : (numofpeople < 2 || !ready || oppoReady)}"><span class="text">상대편이 준비 중입니다</span><span class="waiting">...</span></p>
+      <p class="statusBar" :class="{off : !gameStart}"><span v-text="gameTimer"></span>초후 시작됩니다.</p>
     </div>
     <div class="step step2" :class="{on : stepNo == 2}">
       <ul class="subject">

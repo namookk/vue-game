@@ -96,6 +96,9 @@ export default {
                 }else{
                     obj.message = message;
                     this.recvList.push(data)
+                    $('.chat')
+                        .stop()
+                        .animate({ scrollTop: $('.chat')[0].scrollHeight }, 1000);
                 }
             });
             this.stompClient.send("/chat/alarm", JSON.stringify({"messageType" : 'ENTER','username':this.username}), {})   
