@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import router from '../router/index'
 export default {
     name : 'login',
     data () {
@@ -18,11 +19,14 @@ export default {
     },
     methods : {
         goMain () {
-            this.$http.get('http://54.180.210.229:9999/api/game/enter')
-            .then(res => {
+            const $this = this;
+            this.$http.get(this.$store.getters.SERVER_URL+'/api/game/enter',{
+              params : {"username":this.username}
+            }).then(res => {
                if(res.data.obj < 2){
-                  this.$store.commit('login',this.username)
-                  location.href= "/main"
+                  
+                  $this.$store.commit('login',res.data.obj2);
+                  router.push({name  : "Main",query : {"gameNo":res.data.obj2.enterGameNo}});
                }else{
                   alert("인원이 가득찼습니다.");
                }
