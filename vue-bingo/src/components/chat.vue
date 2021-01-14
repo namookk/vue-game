@@ -77,6 +77,7 @@ export default {
         },
         chatSubscribe(){
             console.log("chat:sub call");
+            const $this = this;
             // 서버의 메시지 전송 endpoint를 구독합니다.
             // 이런형태를 pub sub 구조라고 합니다.
             this.stompClient.subscribe("/sub/chat/room", res => {
@@ -96,9 +97,27 @@ export default {
                 }else{
                     obj.message = message;
                     this.recvList.push(data)
-                    $('.chat')
+                }
+
+                $('.chat')
                         .stop()
                         .animate({ scrollTop: $('.chat')[0].scrollHeight }, 1000);
+                if($this.username != data.username){
+                    if(data.messageType != null){
+                        let message = ''
+                        if(data.messageType == 'ENTER'){
+                            message = ' 입장하였습니다.';
+                        }else if(data.messageType == 'LEAVE'){
+                            message = ' 퇴장하였습니다.';
+                        }
+                        let notification = new Notification('새로운 메시지가 있습니다.',{
+                            body: data.username + '님이'+ message
+                        })
+                    }else{
+                        let notification = new Notification('새로운 메시지가 있습니다.',{
+                            body: data.username + '님의 메시지 : '+ data.content
+                        })
+                    }
                 }
             });
             this.stompClient.send("/chat/alarm", JSON.stringify({"messageType" : 'ENTER','username':this.username}), {})   

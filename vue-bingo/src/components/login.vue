@@ -17,6 +17,11 @@ export default {
              username : ''
          }
     },
+    mounted() {
+      if(window.Notification){
+        Notification.requestPermission();
+      }
+    },
     methods : {
         goMain () {
             const $this = this;
