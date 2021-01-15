@@ -38,12 +38,6 @@ export default {
         }
     },
     methods : {
-        logout () {
-            this.$http.get(this.$store.getters.SERVER_URL+"/api/game/leave")
-                .then(res =>{
-                    
-                })
-        },
         sendMessage(e) {
             if(this.username !== '' && this.content !== ''){
                 this.send()
@@ -98,27 +92,7 @@ export default {
                     obj.message = message;
                     this.recvList.push(data)
                 }
-
-                $('.chat')
-                        .stop()
-                        .animate({ scrollTop: $('.chat')[0].scrollHeight }, 1000);
-                if($this.username != data.username){
-                    if(data.messageType != null){
-                        let message = ''
-                        if(data.messageType == 'ENTER'){
-                            message = ' 입장하였습니다.';
-                        }else if(data.messageType == 'LEAVE'){
-                            message = ' 퇴장하였습니다.';
-                        }
-                        let notification = new Notification('새로운 메시지가 있습니다.',{
-                            body: data.username + '님이'+ message
-                        })
-                    }else{
-                        let notification = new Notification('새로운 메시지가 있습니다.',{
-                            body: data.username + '님의 메시지 : '+ data.content
-                        })
-                    }
-                }
+                $('.chat').stop().animate({ scrollTop: $('.chat')[0].scrollHeight }, 1000);
             });
             this.stompClient.send("/chat/alarm", JSON.stringify({"messageType" : 'ENTER','username':this.username}), {})   
         }
