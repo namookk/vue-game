@@ -41,11 +41,11 @@
             </colgroup>
             <tbody>
               <tr>
-                <td class="chk sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
-                <td class="sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
-                <td class="sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
-                <td class="sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
-                <td class="sucess"><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
+                <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
               </tr>
               <tr>
                 <td><textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea></td>
@@ -86,24 +86,6 @@
           </div>
         </div>
       </div>
-      <script>
-        let subject_li = document.querySelectorAll(".step2 .subject li");
-        function resize(obj){
-          obj.style.height = "1px";
-          obj.style.height = (obj.scrollHeight)+"px";
-        }
-        function step2_pop_time(i){
-          setTimeout(function(){
-            subject_li[i].classList.add("on");
-          }, 300 * (i+1))
-        }
-        function step2_pop(){
-          for(let i = 0;i < subject_li.length;i++){
-            step2_pop_time(i);
-          }
-        }
-        step2_pop();
-      </script>
       <div class="chatWrap">
         <div class="chat">
           <div class="comment">
@@ -160,5 +142,60 @@
       <button type="button" class="exitBtn">나가기</button>
     </div>
   </div>
+  <script>
+    // step2
+    let subject_li = document.querySelectorAll(".step2 .subject li");
+    let step2 = {
+      subject_li_L: subject_li.length,
+      pop_time: 200,
+      select_time: 100,
+      delay_time: 1000,
+      select_i: 4
+    };
+
+    function step2_pop_time(i){
+      setTimeout(function(){
+        subject_li[i].classList.add("on");
+      }, step2.pop_time * i);
+    }
+    function step2_pop(){
+      for(let i = 0;i < step2.subject_li_L;i++){
+        step2_pop_time(i);
+      }
+    }
+
+    function step2_select_time(i){
+      setTimeout(function(){
+        subject_li[i].classList.add("select");
+      }, step2.select_time * i);
+      setTimeout(function(){
+        subject_li[i].classList.remove("select");
+      }, step2.select_time * (i+1));
+    }
+    function step2_select(x){
+      for(let i = 0;i < x;i++){
+        step2_select_time(i);
+      }
+    }
+
+    // if(document.querySelector(".step2").classList.contains("on")){
+      step2_pop();
+      setTimeout(function(){
+        step2_select(step2.subject_li_L);
+      }, step2.pop_time * step2.subject_li_L + step2.delay_time);
+      setTimeout(function(){
+        step2_select(step2.select_i);
+        subject_li[step2.select_i].classList.add("twinkle")
+      }, step2.pop_time * step2.subject_li_L + step2.delay_time + step2.select_time * step2.subject_li_L);
+    // }
+
+    //step3
+    document.querySelectorAll(".step3 td").forEach(el => {
+      el.addEventListener("click", function(){
+        el.classList.add("chk");
+      });
+    });
+      
+  </script>
 </body>
 </html>
