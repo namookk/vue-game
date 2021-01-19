@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/sw/layout.css">
 </head>
 <body>
   <div id="main" class="wrap">
@@ -28,6 +28,7 @@
             <li><span>과자 이름</span></li>
             <li><span>아이스크림 이름</span></li>
           </ul>
+          <button type="button" class="selectBtn" onclick="selectStart();">랜덤선택</button>
         </div>
         <div class="step step3">
           <h2>주제</h2>
@@ -101,6 +102,70 @@
           for(let i = 0;i < subject_li.length;i++){
             step2_pop_time(i);
           }
+        }
+
+
+
+        function selectStart(){
+
+            let ranNum = Math.floor(Math.random()*10);
+            let delay = 60;
+            let plueDelay = 30;
+            let i = 1;
+            let idx = 0;
+
+            for(let j  = 0; j < subject_li.length; j++){
+              let blindBox = document.createElement("div");
+              let boxclass = blindBox.classList.add('blind');
+              subject_li[j].appendChild(blindBox);
+              blindBox.classList.add('on');
+            }
+
+            setBlindBoxActive();
+            function setBlindBoxActive(){
+              let box = document.querySelectorAll('.blind');
+              box[0].classList.add("active");
+              idx++;
+              setTimeout(activeTimer,delay);
+            }
+
+            function activeTimer(){
+              let box = document.querySelectorAll('.blind');
+              box.forEach(item => {
+                item.classList.remove("active");
+              })
+                
+              box[idx].classList.add("active");
+
+              if(!(i === 5 && idx === ranNum)){
+
+                if(i === 5 && idx != ranNum){
+                  idx++;
+                  delay += plueDelay;
+                  setTimeout(activeTimer,delay);
+                }else{
+                  if(idx === subject_li.length - 1){
+                    idx = 0;
+                    i++;
+                    delay += plueDelay;
+                  }else{
+                    idx++;
+                  }
+                  setTimeout(activeTimer,delay);
+                }
+              }else{
+                let x = 0;
+                let itv = setInterval(function(){
+                  if(x%2 == 0){
+                    box[idx].classList.remove("active");
+                  }else{
+                    box[idx].classList.add("active");
+                  }
+                  x++;
+                  if(x==10) clearInterval(itv)
+                },100)
+              }
+            }
         }
         step2_pop();
       </script>
