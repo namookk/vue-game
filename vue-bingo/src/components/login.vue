@@ -18,9 +18,6 @@ export default {
          }
     },
     mounted() {
-      if(window.Notification){
-        Notification.requestPermission();
-      }
     },
     methods : {
         goMain () {

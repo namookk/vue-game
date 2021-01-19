@@ -27,6 +27,8 @@ export default {
     created() {
        this.connect();
     },
+    mounted(){
+    },
     methods : {
       connect (state) {
              //const serverURL = "http://54.180.210.229:9999"
